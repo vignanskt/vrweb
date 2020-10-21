@@ -1,0 +1,78 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+<!-- ajouter un icone ici --><link rel="icon" href="">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <!-- menu -->
+    <header>
+        <ul class="nav-list">
+            <li class="nav-item"><a class="deco" href="index.html">Accueil</a></li>
+            <li class="nav-item"><a class="deco" href="evo.html">L'évolution</a></li>
+            <li class="nav-item"><a class="deco" href="utilisation.html">Utilisation</a></li>
+            <li class="nav-item"><a class="deco" href="materiel.html">Matériels</a></li>
+            <li class="nav-item"><a class="deco" href="#">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- page principale -->
+    <main>
+    <div class="content">
+        <h1 class="title">Contactez nous!</h1>
+    
+        <section>
+            <div class="lay-text">
+                Pour nous contacter veuillez utiliser le formulaire de contact ci-dessous. Nous vous répondrons dans les plus brefs délais!
+            </div>
+        </section>
+    
+        <div class="container">
+            <form action="conf.php">
+                <p>Les champs avec <abbr title="(obligatoire)" aria-hidden="true">*</abbr> sont obligatoires.</p>
+                <label for="nom">Nom</label>
+                <input type="text" name="Nom" class="ted" placeholder="Votre nom">
+
+                <label for="prénom">Prénom</label>
+                <input type="text" name="Nom" placeholder="Votre prénom">
+
+                <abbr title="(obligatoire)" aria-hidden="true">Email*</abbr>
+                <input type="text" name="email" required placeholder="Votre email">
+
+                <abbr title="(obligatoire)" aria-hidden="true">Téléphone*</abbr>
+                <input type="text" name="phone" required placeholder="Votre téléphone">
+
+                <label for="choix">Comment souhaitez-vous être contacté?</label>
+                <select id="choix" name="choix">
+                    <option value="phone">Téléphone</option>
+                    <option value="email">Email</option>
+                    <option value="email">Ne souhaite pas être contacté</option>
+                </select>
+
+                <label for="subject">Message</label>
+                <textarea id="msg" name="msg" placeholder="Votre message" style="height:190px"></textarea>
+
+                <input type="submit" value="Envoyer">
+
+            </form>
+        </div> 
+    </div>
+    </main>
+    <!-- bas de page -->
+    <footer>
+        <ul class="nav-list">
+            <li class="nav-item"><a class="deco" href="https://goo.gl/maps/5jtBrYVvBaeCcDZ36">Notre adresse postale</a></li>
+            <li class="nav-item"><a class="deco" href="accueil.html">Plan du site </a></li>
+            
+        </ul>
+    </footer>
+
+
+    <!-- fichiers javascripts -->
+   
+   
+</body>
+
+</html>

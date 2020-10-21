@@ -1,0 +1,540 @@
+/* ---------------------------Fonts-------------------------------------*/
+@font-face {
+    font-family: "Gabriela";
+    src: url('./fonts/Gabriela/Gabriela-Regular.ttf');
+}
+
+/* ---------------------------Layout-------------------------------------*/
+html {
+  scroll-behavior: smooth;
+}
+body{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto 150px;  
+    grid-template-areas: 
+        "head"
+        "main"
+        "foot";
+    padding: 0;
+    margin: 0;
+    font-family: Gabriela;
+    font-size: clamp(1rem, 2vw, larger); 
+    
+}
+h1{
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem); 
+}
+h2, h3{
+    font-size: clamp(18px, 2vw, 1.5rem); 
+}
+
+header{
+    grid-area: head;
+    background-color: rgb(22, 22, 22);
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    opacity: 0.9;
+    margin-top: 0px;
+    z-index: 999;
+}
+
+main{
+    grid-area: main;
+    background-color: #add9eb;/* couleur page base*/
+}
+
+.alt-color{
+    background-color: rgb(216, 216, 194); /* class couleur alternative */
+}
+
+footer{
+    grid-area: foot;
+    background-color: rgb(0, 0, 0);
+
+}
+
+.nav-list{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    justify-content: center; /* horizontal*/
+    align-items: center; /* vertical*/
+    height: 100%;
+    overflow-x: scroll; /* 1 */
+    -webkit-overflow-scrolling: touch; /* 2 */
+    overflow: hidden;
+}
+
+.nav-item{
+    margin: 0 10px;
+} 
+.deco{
+    text-decoration: none;
+    color: rgb(221, 221, 221);
+}
+
+
+.bouton {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #add9eb;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgb(215, 216, 174);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+
+
+.nohyper{
+    text-decoration: none;
+}
+
+/* ----------------------------image principale------------------------------------*/
+#img-content{
+     /* left bot blur right*/
+    margin-top: -1px;
+    box-shadow: 0 4px 6px 0 rgb(78, 78, 78);
+    background-image: url(./media/vr_cut_satin.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* a tester sur petit ecran (mobile) rétrécir si apparition de partie non image*/
+    height: clamp(200px, 50vw, 500px ); /* entre 200px  et 500px avex taux de croissance 50vw depend taille ecran*/
+}
+
+
+
+
+
+/* ----------------------------------------------------------------*/
+.content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    padding: 1rem 0 2rem 0;
+}
+
+.title:before,.title:after{
+    content: "\00a0\00a0\00a0\00a0\00a0";/*space*/
+
+}
+.title{
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    display: flex;
+    text-align: center;
+   
+}
+
+.lay-text{
+    padding: 0 10%;
+    max-width: 800px;
+    text-align: justify;
+    margin-bottom: 2rem;
+    
+    
+}
+
+/* ----------------------------img et texte------------------------------------*/
+.cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    align-content: center;
+    justify-content: center;  
+    
+}
+
+
+
+.artic{
+    margin-bottom: 40px;
+    text-align: center;
+    justify-content: center;  
+}
+
+.artic-img{
+    max-width: 200px;
+    max-height: 200px;/*for ios*/
+    height: auto;
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 3%;
+    border: 2px solid rgb(0, 0, 0);
+
+}
+
+.artic-txt{
+    max-width: 300px;
+    height: 100%;
+    flex: 1 1 300px;
+    margin: 0 1rem; 
+    text-align: justify;
+}
+
+.titre-util{
+    max-width: 300px;
+    height: 100%;
+    flex: 1 1 300px;
+    margin: 0 1rem; 
+    text-align: center;
+}
+
+
+.titre{
+    margin-top: -1rem;
+    color: rgb(8, 50, 139);
+    font-size: clamp(1.1rem, 2vw, 1.3rem); 
+}
+
+
+/* ---------------------------- contact----------------------------------*/
+ /* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #000; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: -1px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 0;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+    border-radius: 10px;
+    background-color: rgb(215, 216, 174);
+    padding: 1em;
+    max-width: 85%;
+} 
+
+.container > form{
+    max-width: 450px;
+}
+
+/*materiels*/
+
+.materiels{
+
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+ 
+}
+
+.mat1{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap
+    margin-bottom:1em ;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    width: 100%;
+    
+}
+
+.mat2{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom:1em ;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    width: 100%;
+    background-color:rgb(215, 216, 174);
+    padding: 1rem 0 2rem 0;
+    
+    
+}
+
+.description{
+    max-width: 400px;
+    margin-right: 1em;
+}
+
+/*frise*/
+
+
+/* code pris sur le site https://codepen.io/joshyfrancis/pen/KePdEN
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+#timeline1{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.timeline2 {
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 800px;
+    top: calc(100%-600px);
+    position: relative;
+    scroll-behavior:  smooth ;
+
+}
+.timeline2   *, .timeline2   *::before, .timeline2   *::after { 
+    font: normal 16px/1.5 "Helvetica Neue", sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.timeline2 ul {
+    background:#add9eb;
+}
+
+.timeline2 ul li {
+    list-style-type: none;
+    position: relative;
+    width: 2px;/* width: 6px; */
+    margin: 0 auto;
+    padding-top: 10px;/* 50px; */
+    padding-bottom: 10px;/* padding-bottom: 20px; = center padding-bottom: 10px; = center */
+    background: #fff; /* background: black;  */
+    border-left: 3px double white;
+}
+
+
+.timeline2 ul li::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 30px; /* bottom: 0;  bottom: 50%;=center top: 30px;=top  */ 
+    transform: translateX(-55%);/* transform: translateX(-50%); */
+    -webkit-transform: translateX(-55%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: inherit;
+    border: 2px solid #03A9F4;
+}
+
+.timeline2 > ul > li > div {
+    position: relative;
+    bottom: 0;
+    width: 400px;
+    padding: 15px;
+    background: #03A9F4;
+}
+
+.img_date > time{
+    position: e;
+}
+
+.img_date > img{
+    max-height: 100%; 
+    max-width: 91%;
+}
+
+
+.timeline2 ul li div::before {
+    content: '';
+    position: absolute;
+    top: 20px; /* bottom: 7px; bottom: 50%;=center top: 20px;=top */
+
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.timeline2 ul li:nth-child(odd) div {
+    left: 45px;
+}
+
+.timeline2 ul li:nth-child(odd) div::before {
+    left: -15px;
+    border-width: 16px 16px 16px 0;/* border-width: 8px 16px 8px 0; */
+    border-color: transparent #03A9F4 transparent transparent;
+}
+
+.timeline2 ul li:nth-child(even) div {
+    left: -439px;
+}
+
+.timeline2 ul li:nth-child(even) div::before {
+    right: -15px;
+    border-width: 16px 0 16px 16px; /* border-width: 8px 0 8px 16px; */
+    border-color: transparent transparent transparent #03A9F4;
+}
+
+
+.timeline2 ul li:nth-child(odd) .time {
+    position: absolute;
+    top: 20px;
+    left: -100px;
+    width: 90px;
+}
+.timeline2 ul li:nth-child(even) .time {
+    position: absolute;
+    top: 20px;
+    right: -120px;
+    width: 90px;
+}
+
+
+.timeline2 time {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    background-color: coral;
+    border-radius: 5px;
+    padding: 0 5px;
+
+}
+
+
+/* EFFECTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline2 ul li::after {
+    transition: background .5s ease-in-out;
+    -webkit-transition: background .5s ease-in-out;
+}
+
+.timeline2 ul li.in-view::after {
+    background: #03A9F4;
+    border: 2px solid white;
+}
+
+.timeline2 ul li div {
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.timeline2 ul li:nth-child(odd) div {
+    transform: translate3d(200px, 0, 0);
+    -webkit-transform: translate(200px, 0, 0);
+}
+
+.timeline2 ul li:nth-child(even) div {
+    transform: translate3d(-200px, 0, 0);
+    -webkit-transform: translate(-200px, 0, 0);
+}
+
+.timeline2 ul li.in-view div {
+    transform: none;
+    -webkit-transform: none;
+    visibility: visible;
+    opacity: 1;
+
+}
+
+.timeline2 ul li  .time {
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    transform: rotate(-90deg);
+    -webkit-transform:rotate(270deg);
+    
+
+}
+.timeline2 ul li.in-view  .time {
+    transform: rotate(0deg);
+    -webkit-transform:rotate(0deg);
+    
+    }
+
+/* GENERAL MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media screen and (max-width: 900px) {
+    .timeline2 ul li div {
+    width: 250px;
+}
+.timeline2 ul li:nth-child(even) div {
+    left: -289px;
+    /*250+45-6*/
+}
+}
+
+@media screen and (max-width: 600px) {
+    .timeline2 ul li {
+        margin-left: 20px;
+    }
+
+    .timeline2 ul li div {
+        width: calc(100vw - 120px);
+    }
+    
+    .timeline2 ul li:nth-child(even) div {
+        left: 45px;
+    }
+    .timeline2 ul li:nth-child(even) div::before {
+        left: -15px;
+        border-width: 16px 16px 16px 0; /* border-width: 8px 16px 8px 0;  */
+        border-color: transparent #03A9F4 transparent transparent;
+    }
+
+
+    .timeline2 ul li:nth-child(odd) .time {
+        position: absolute;
+        top: 60px;
+        left: -23px;
+        width: 90px;
+        transform: rotate(0deg);
+        -webkit-transform:rotate(0deg);
+    }
+
+    .timeline2 ul li:nth-child(even) .time {
+        position: absolute;
+        top: 60px;
+        right: -67px;
+        width: 90px;
+        transform: rotate(0deg);
+        -webkit-transform:rotate(0deg);
+    }
+
+    .timeline2 ul li.in-view:nth-child(odd) .time {
+        transform: rotate(-90deg);
+        -webkit-transform:rotate(270deg);					 
+    }
+    
+    .timeline2 ul li.in-view:nth-child(even) .time {
+        transform: rotate(-90deg);
+        -webkit-transform:rotate(270deg);
+    }
+
+}
+
